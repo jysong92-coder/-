@@ -41,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="bg-background">
       <head>
+        <meta name="google-site-verification" content="_IGu48JDE5MOvfzInd0EmCWAW4IdXIhp-HZAnAF5SAQ" />
         <meta name="google-adsense-account" content="ca-pub-8761588942212704" />
         <Script
           async
