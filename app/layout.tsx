@@ -41,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="bg-background">
       <head>
+        <meta name="naver-site-verification" content="38d842e9758203b8e3d7f7965815703e667065af" />
         <meta name="google-site-verification" content="_IGu48JDE5MOvfzInd0EmCWAW4IdXIhp-HZAnAF5SAQ" />
         <meta name="google-adsense-account" content="ca-pub-8761588942212704" />
         <Script
