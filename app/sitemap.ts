@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { categories, serviceCenters } from '@/lib/service-centers'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://customercenter114.kr'
+  const baseUrl = 'https://www.xn--i49alon81c06o.kr'
   
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

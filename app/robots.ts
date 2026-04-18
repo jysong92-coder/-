@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://customercenter114.kr/sitemap.xml',
+    sitemap: 'https://www.xn--i49alon81c06o.kr/sitemap.xml',
   }
 }
