@@ -119,7 +119,7 @@ export default function AboutPage() {
                 <li><strong>의료·건강:</strong> 삼성서울병원, 서울아산병원 등</li>
               </ul>
               <h2 className="text-2xl font-bold text-foreground mb-4 mt-12">
-                운영진 및 책임 연구진 정보 (CEO & E-E-A-T)
+                신뢰할 수 있는 정보 및 서비스 검증 책임 (SEO & E-E-A-T)
               </h2>
               <div className="bg-secondary/40 border border-border rounded-xl p-6 text-sm text-muted-foreground space-y-4 mb-8">
                 <p className="leading-relaxed">
