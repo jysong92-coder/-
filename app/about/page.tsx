@@ -118,6 +118,27 @@ export default function AboutPage() {
                 <li className="mb-2"><strong>공공기관:</strong> 국민건강보험, 국민연금, 국세청 등</li>
                 <li><strong>의료·건강:</strong> 삼성서울병원, 서울아산병원 등</li>
               </ul>
+              <h2 className="text-2xl font-bold text-foreground mb-4 mt-12">
+                운영진 및 책임 연구진 정보 (CEO & E-E-A-T)
+              </h2>
+              <div className="bg-secondary/40 border border-border rounded-xl p-6 text-sm text-muted-foreground space-y-4 mb-8">
+                <p className="leading-relaxed">
+                  <strong>고객센터 114</strong>는 정보의 신뢰도와 대고객 서비스 경험 향상을 최우선으로 생각합니다. 
+                  인터넷에 흩어진 파편화된 고객지원 정보들을 실시간 수집·검증하여 국민들에게 무료 제공하는 공익성 편의 사이트입니다.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  <div>
+                    <span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground/85">대표 서비스 기획자 / CEO</span>
+                    <strong className="text-foreground text-base">송준용 (CEO & Lead Service Architect)</strong>
+                    <span className="block mt-1 text-xs">바이브코딩 비즈니스 총괄 개발 및 서비스 운영 총괄 책임자</span>
+                  </div>
+                  <div>
+                    <span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground/85">공식 이메일 문의처</span>
+                    <strong className="text-foreground text-base">support@vibecoding.co.kr</strong>
+                    <span className="block mt-1 text-xs">정보 정정 제보, 비즈니스 협력 및 광고 게재 문의</span>
+                  </div>
+                </div>
+              </div>
 
               <h2 className="text-2xl font-bold text-foreground mb-4 mt-12">
                 면책 조항
