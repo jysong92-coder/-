@@ -1,6 +1,7 @@
 "use client"
 
-import { Phone, MapPin, ExternalLink, Clock, Building2 } from "lucide-react"
+import { Phone, MapPin, ExternalLink, Clock, Info } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import type { ServiceCenter } from "@/lib/service-centers"
@@ -21,12 +22,14 @@ export function ServiceCenterCard({ center, featured = false }: ServiceCenterCar
       `}
     >
       <div className="p-6">
-        {/* Header with Logo */}
-        <div className="flex items-start gap-4 mb-4">
-          <CompanyLogo name={center.name} className="w-16 h-16 flex-shrink-0" />
+        {/* Header with Logo linking to Detail page */}
+        <Link href={`/center/${center.id}`} className="flex items-start gap-4 mb-4 group/header">
+          <CompanyLogo name={center.name} className="w-16 h-16 flex-shrink-0 group-hover/header:scale-[1.03] transition-transform duration-300" />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="font-bold text-lg text-foreground truncate">{center.name}</h3>
+              <h3 className="font-bold text-lg text-foreground truncate group-hover/header:text-accent transition-colors">
+                {center.name}
+              </h3>
               {featured && (
                 <Badge variant="secondary" className="bg-accent text-accent-foreground text-xs">
                   인기
@@ -35,7 +38,7 @@ export function ServiceCenterCard({ center, featured = false }: ServiceCenterCar
             </div>
             <p className="text-sm text-muted-foreground">{center.subCategory}</p>
           </div>
-        </div>
+        </Link>
 
         {/* Phone Number */}
         <div className="flex items-center gap-3 mb-3 p-3 bg-secondary rounded-lg">
@@ -58,7 +61,7 @@ export function ServiceCenterCard({ center, featured = false }: ServiceCenterCar
         {/* Operating Hours */}
         <div className="flex items-start gap-2 mb-3 text-sm text-muted-foreground">
           <Clock className="w-4 h-4 flex-shrink-0 mt-0.5" />
-          <span>{center.operatingHours}</span>
+          <span className="truncate">{center.operatingHours}</span>
         </div>
 
         {/* Description */}
@@ -82,28 +85,51 @@ export function ServiceCenterCard({ center, featured = false }: ServiceCenterCar
 
         {/* Action Buttons */}
         <div className="flex flex-wrap gap-2">
-          <a href={`tel:${center.phone}`} className="flex-1 min-w-[120px]">
+          {/* Primary View Details Button */}
+          <Link href={`/center/${center.id}`} className="flex-1 min-w-[120px]">
             <Button className="w-full gap-2" size="sm">
+              <Info className="w-4 h-4" />
+              상세보기
+            </Button>
+          </Link>
+
+          {/* Secondary Phone Call Button */}
+          <a href={`tel:${center.phone}`} className="flex-1 min-w-[120px]">
+            <Button variant="outline" className="w-full gap-2" size="sm">
               <Phone className="w-4 h-4" />
               전화하기
             </Button>
           </a>
-          {center.locationUrl && (
-            <a href={center.locationUrl} target="_blank" rel="noopener noreferrer" className="flex-1 min-w-[120px]">
+
+          {/* Fallback Third Option: Location or Website */}
+          {center.locationUrl ? (
+            <a 
+              href={center.locationUrl} 
+              target="_blank" 
+              rel="nofollow noopener noreferrer" 
+              className="flex-1 min-w-[120px]"
+            >
               <Button variant="outline" className="w-full gap-2" size="sm">
                 <MapPin className="w-4 h-4" />
                 위치 찾기
               </Button>
             </a>
+          ) : (
+            <a 
+              href={center.website} 
+              target="_blank" 
+              rel="nofollow noopener noreferrer" 
+              className="flex-1 min-w-[120px]"
+            >
+              <Button variant="outline" className="w-full gap-2" size="sm">
+                <ExternalLink className="w-4 h-4" />
+                홈페이지
+              </Button>
+            </a>
           )}
-          <a href={center.website} target="_blank" rel="noopener noreferrer" className="flex-1 min-w-[120px]">
-            <Button variant="outline" className="w-full gap-2" size="sm">
-              <ExternalLink className="w-4 h-4" />
-              홈페이지
-            </Button>
-          </a>
         </div>
       </div>
     </article>
   )
 }
+

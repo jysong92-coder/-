@@ -1443,3 +1443,8 @@ export function getPopularCenters(): ServiceCenter[] {
   ]
   return serviceCenters.filter(center => popularIds.includes(center.id))
 }
+
+export function getServiceCenterById(id: string): ServiceCenter | undefined {
+  return serviceCenters.find(center => center.id === id)
+}
+

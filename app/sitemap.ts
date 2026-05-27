@@ -46,5 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticPages, ...categoryPages]
+  // Individual service center detail pages
+  const centerPages: MetadataRoute.Sitemap = serviceCenters.map((center) => ({
+    url: `${baseUrl}/center/${center.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...categoryPages, ...centerPages]
 }

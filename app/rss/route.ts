@@ -21,7 +21,7 @@ export async function GET() {
     return `
     <item>
       <title>${center.name} - ${center.phone}</title>
-      <link>${baseUrl}/category/${center.category}</link>
+      <link>${baseUrl}/center/${center.id}</link>
       <description>${center.description.substring(0, 200)}</description>
       <pubDate>${now}</pubDate>
       <guid>${baseUrl}/center/${center.id}</guid>
